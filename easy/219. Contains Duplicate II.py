@@ -40,3 +40,5 @@ def containsNearbyDuplicate(self, nums, k):
             return True
         dic[v] = i
     return False
+
+    # Any comments and advice?
