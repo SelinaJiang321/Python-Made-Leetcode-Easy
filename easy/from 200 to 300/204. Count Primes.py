@@ -56,3 +56,5 @@ class Solution(object):
            i += 1
      # sum() function returns the sum of all the True statement in the loop ,since True is regarded as 1     
      return sum(table)
+    
+     # Any advice or comments?
