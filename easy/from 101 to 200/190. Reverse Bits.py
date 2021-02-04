@@ -1,10 +1,6 @@
 """
 Reverse bits of a given 32 bits unsigned integer.
 
-
-
- 
-
 Example 1:
 
 Input: n = 00000010100101000001111010011100
@@ -26,7 +22,10 @@ class Solution:
         rev, power = 0, 31
         # while n is not 0 , which means that the bit manipulation hasn't finished yet
         while n:
-        
+        # n & 0000 0000 0000 0000 0000 0000 0000 0001
+        # the least significant bit( the right most bit) << power then becomes the most significant bit in the return value
+        # power -= 1 then the second most sig bit
+        # n >> 1 then the second last least least sig bit
             rev += (n & 1) << power
             power -= 1
             n = n >> 1
