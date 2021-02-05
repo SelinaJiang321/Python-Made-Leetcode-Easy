@@ -36,5 +36,8 @@ class Solution(object):
         :rtype: int
         """
         
+        # sort the arrays in ascending order so that you can pick the smaller one
         nums.sort()
+       
+        #step two at a time, since it was already sorted so it would be the sum of the minimum numbers
         return sum(nums[::2])
