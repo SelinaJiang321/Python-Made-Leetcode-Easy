@@ -58,9 +58,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[str]
         """
+    
+        # to create a new linked list
         ranges = []
         for n in nums:
+            # if the array is empty or n is larger than the last element of the array + 1
             if not ranges or n > ranges[-1][-1] + 1:
-                ranges += [],
+                # add an empty space to the ranges[-1][] that can store a tuple like [1,3]
+                ranges += []
+             # slice objects like ranges[1,2,3]
+             # ranges
             ranges[-1][1:] = n,
+            
         return ['->'.join(map(str, r)) for r in ranges]
