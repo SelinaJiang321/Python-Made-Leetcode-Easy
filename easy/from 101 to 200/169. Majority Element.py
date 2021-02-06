@@ -32,5 +32,11 @@ class Solution(object):
         :rtype: int
         """
         
+        # the description of the problem is that the majority element appears more than [n/2] times 
+        # so we can sort the elements in ascending or descending order, and then we can return the middle elements which must be the majority element
+        # list.sort() to sort out the list in a certain order
         nums.sort()
         return nums[len(nums) // 2]
+       
+        # time complexity: O(nlgn) sorting the arrays in python is nlogn time, which is the domain funciton
+        # space complexity: O(1) sort the array, linear space
