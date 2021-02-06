@@ -28,6 +28,7 @@ Each element in the array appears twice except for one element which appears onl
 
 """
 
+# Hash Table Solution
 class Solution(object):
     def singleNumber(self, nums):
         """
@@ -35,9 +36,19 @@ class Solution(object):
         :rtype: int
         """
         
+        # create a new dictionary
         dic = {}
+        # traverse the numbers in the list nums
         for num in nums:
+            # .get() funciton -> to get the value of the key in python
+            # get() function: key, default=None
+            # since we need to set the default value of each number to 0 so we use get(num, 0)
             dic[num] = dic.get(num, 0) + 1
+        # for dic.items() function:
+        # we can fetch the key and value of each item in the dictionary
         for key, value in dic.items():
             if value == 1:
                 return key
+
+        # Any comments or advice?
+        
