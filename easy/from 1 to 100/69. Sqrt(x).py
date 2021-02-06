@@ -29,10 +29,17 @@ class Solution(object):
         :rtype: int
         """
         
+        # to search for the middle value
         l, r = 0 , x
         
+        
         while l <= r:
+            # value of mid is always the (left end + right end) /2
             mid = (r + l) // 2
+            
+            # for example, x = 9, mid = 4, 4*4 > 16, right end = mid - 1
+            # else, like x = 5, mid = 2, 4 < 5 <= 9, return 5
+            # else, like x = 10, mid = 5, 25> 10 ,right = 4; mid = 2, 10 > 9, then l = mid + 1 = 3; mid = (3 + 4)/2 = 3, satisfies the condition, returns 3
             if mid * mid <= x < (mid+1) * (mid + 1):
                 return mid
             elif mid * mid > x:
