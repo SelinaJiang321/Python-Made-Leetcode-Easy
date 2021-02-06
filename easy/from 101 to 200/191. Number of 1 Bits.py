@@ -42,10 +42,14 @@ class Solution(object):
         """
         count, power, one = 0, 0, 1
         
+        # power is the times to move the 1 to the left
         while power < 32:
+          # if (n & one) != 0 then there is one more bit
           if (n & one) != 0:
               count += 1
+          # we need to move the 1 to left
           one <<= 1
+          # this power just a counter, to count 32 times
           power += 1
           
         return count
