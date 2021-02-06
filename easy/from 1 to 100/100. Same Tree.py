@@ -43,7 +43,10 @@ class Solution(object):
         :type q: TreeNode
         :rtype: bool
         """
-        
+        # a recursive binary search tree
+        # if p and q is not NULL, then starts recursing
+        # else return False(p is Null but q is not Null / p is not NUll but q is Null)
+        # if p and q are all none then p is q is true 
         if p and q:
             return p.val == q.val and self.isSameTree(p.left,q.left) and self.isSameTree(p.right, q.right)
         
