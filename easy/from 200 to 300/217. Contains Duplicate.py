@@ -40,6 +40,11 @@ class Solution(object):
 
         sorted(list, reverse=True)
         
+        Note: A list also has the sort() method which performs the same way as sorted(). 
+        The only difference is that the sort() method doesn't return any value and changes the original list.
+
+
+        
         """
         n = sorted(nums)
         for i in range(0,len(nums)-1, 1):
