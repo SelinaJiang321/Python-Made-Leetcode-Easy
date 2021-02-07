@@ -52,12 +52,14 @@ class Solution(object):
         :rtype: bool
         """
         nodes_seen = set()
+        # a set is a structure which can store inrepetitive elements and store them in order
         while head is not None:
               if head in nodes_seen:
                  return True
+              #  if the element is already present, it doesn't add any element else it adds a given element to the set
               nodes_seen.add(head)
               head = head.next
-              
+           
         return False
           
         
