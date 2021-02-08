@@ -64,6 +64,7 @@ class Solution:
     # got the least sig figure
     total = roman_dic[s[len(s)-1]]
     
+    # we need to loop until -1 since the range([1],[2],[3])  is always equal to the start value and not equal to the stop value
     for i in range(len(s)-2, -1, -1):
         curr_val  = roman_dic[s[i]]
         prev_val = roman_dic[s[i+1]]
