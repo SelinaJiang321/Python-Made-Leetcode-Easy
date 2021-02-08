@@ -41,7 +41,8 @@ nums contains distinct values sorted in ascending order.
         :rtype: int
         """
         
-         for i in range(0, len(nums), 1) :
-            if nums[i] >= target:
-                return i
-         return len(nums)
+        # Linear Scan
+        for i in range(0, len(nums), 1) :
+           if nums[i] >= target:
+               return i
+        return len(nums)
