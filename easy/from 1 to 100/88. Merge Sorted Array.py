@@ -53,4 +53,4 @@ class Solution(object):
             nums1[n-1] = nums2[n-1]
             n -= 1
         #Time complexity: O(1)
-        #Space complexty: O(n)
+        #Space complexty: O(1)
