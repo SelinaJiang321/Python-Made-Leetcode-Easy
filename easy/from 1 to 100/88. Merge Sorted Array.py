@@ -37,30 +37,20 @@ class Solution(object):
         :type n: int
         :rtype: None Do not return anything, modify nums1 in-place instead.
         """
-        i = j = k  =0
-        res = [0] * len(nums1)
-        
-        while i < m and j < n:
-            if nums1[i] < nums2[j]:
-                res[k] = nums1[i]
-                i += 1
-                k += 1
+    
+    
+        while m > 0 and n > 0:
+            # we traverse the arrays from backwards
+            if nums1[m-1] > nums2[n-1]:
+                nums1[m+n-1] = nums1[m-1]
+                m -= 1
             else:
-                res[k] = nums2[j]
-                j += 1
-                k += 1
-        
-        while i < m:
-            res[k] = nums1[i]
-            i += 1
-            k += 1
-            
-        while j < n:
-            res[k] = nums2[j]
-            j += 1
-            k += 1
-          
-        for i in range(len(nums1)) :
-            nums1[i] = res[i]
-        
-        return res
+                nums1[m+n-1] = nums2[n-1]
+                n -= 1
+                
+        # if only m > 0 then there is no need to copy the value again,  we can only handle the condition when m == 0
+        while n > 0:
+            nums1[n-1] = nums2[n-1]
+            n -= 1
+        #Time complexity: O(1)
+        #Space complexty: O(n)
