@@ -43,13 +43,23 @@ def intersection(self, nums1, nums2):
     :rtype: List[int]
     """
     res = []
+    # to create a hash table and dictionary to store the times
     map = {}
     for i in nums1:
         map[i] = map[i]+1 if i in map else 1
     for j in nums2:
+        # we need to check if j in map or not
+        # if it is not in map, we can't check if map[j] is > 0 or not-> there will be an infinite loop then
+        # a runtime error will appear
+        
         if j in map and map[j] > 0:
             res.append(j)
             map[j] = 0
     
     return res
+
+    # Any comments?
+    
+    
+    
         
