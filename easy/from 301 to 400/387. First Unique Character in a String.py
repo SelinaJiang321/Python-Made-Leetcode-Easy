@@ -28,7 +28,9 @@ class Solution(object):
         res = collections.Counter(s)
         
         # enumerate function is for two iterable values: items and counts
-        for index, character in enumerate(res):
+        # we need to loop through the original string.
+        # if we loop through the hash table, then there is only key and value
+        for index, character in enumerate(s):
             if res[character] == 1:
                 return index
         return -1
