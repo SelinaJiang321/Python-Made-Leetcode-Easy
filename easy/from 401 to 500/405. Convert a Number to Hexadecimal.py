@@ -41,6 +41,7 @@ class Solution(object):
             # need to add them at the end of the string
             rs = mp[num % 16] + rs
             # to divide it to get the more sig bit
+            # bit operation is slower so don't use num = num >> 4
             num = num // 16
          
          # to remove the zeros of the beginning of the string
