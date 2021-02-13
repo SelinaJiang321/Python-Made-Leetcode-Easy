@@ -37,4 +37,46 @@ root is guaranteed to be a valid binary search tree.
 
 """
 
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution(object):
+    def findTarget(self, root, k):
+        """
+        :type root: TreeNode
+        :type k: int
+        :rtype: bool
+        """
+        # the elements in set are unordered but the duplicates are unordered
+        
+        if not root: return False
+        
+        return self.find(root,set(), k)
+        
+        def find(self,node, nodes,k):
+            # to check if there is an empty node but there is still no value yet
+            
+            if not node: return False
+            
+            complement = k - node.val
+            
+            # to add elements in set is to use .add()
+            # to add elements in an array is to use .append()
+            
+            if complement not in nodes:
+                nodes.add(node.val)
+            else:
+                return True
+                
+            # pass in k not the complement value since we will check the complement value each time
+            return self.find(node.left,nodes, k) or self.find(node.right, nodes, k)
+            
+            #Time complexity: O(n) traverse the whole tree only once
+            # Space complextiy: O(n) since the set will only grow up to n
+            
+            # Any comments?
+            
+
 
