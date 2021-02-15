@@ -58,6 +58,8 @@ def intersection(self, nums1, nums2):
     
     return res
 
+    # Is there any possibility that we can only use one hash table/one extra array to record this?
+
     # Any comments?
     
     
