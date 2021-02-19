@@ -71,6 +71,28 @@ class Solution:
 	
 	# iterative solution
 	
+class Solution:
+    def isSymmetric(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+	if not root: return False
 	
+	stack = [(root.right,root.left)]
+	
+	while stack:
+		l, r = stack.pop()
+		#empty branch already
+		if not l and not r: continue
+		elif not l or not r or (l.val != r.val): return False
+		
+		# return a tuple instead of two variables so we need to have a double brackets
+		stack.append((l.right, r.left))
+		stack.append((l.left, r.right))
+		
+	return True
+	
+	# Time:O(n) Space:O(n) using a stack
         
         
