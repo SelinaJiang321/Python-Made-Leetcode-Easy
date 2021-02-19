@@ -39,6 +39,7 @@ class Solution:
         :rtype: bool
         """
         
+        #Solution 1: 
         if not root:
             return True
             
@@ -52,5 +53,19 @@ class Solution:
             return self.isMirror(tree1.left,tree2.right) and self.isMirror(tree2.left,tree2.right)
         # start the recursion
         return isMirror(tree.left,tree.right)
+    
+    
+        #Solution two: simplify it and the solution is similar to the same tree one
+        if not root:
+	        return True
+        def mirror( p, q):
+    	    if p and q:
+		        return p.val == q.val and mirror(p.left,q.right) and mirror(p.right, q.left)
+            return p is q
+        
+        return mirror(root.left, root.right)
+    
+       
+        # Time Complexity: O(2^n) Space complexity: O(n*m)
         
         
