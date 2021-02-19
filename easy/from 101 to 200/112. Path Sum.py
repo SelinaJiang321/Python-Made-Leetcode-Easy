@@ -51,6 +51,23 @@ class Solution(object):
         # checking whether it is a leaf and we got the targetSum
         # recursion starts
         return self.hasPathSum(root.left, targetSum-root.val) or self.hasPathSum(root.right, targetSum-root.val)
+       
+       # iterative methods with stack
+       
+       if not root:return False
+       
+       stack = [(root, targetSum)]
+       
+       while stack:
+         l, r = stack.pop()
+         # check that we come to the end of the tree
+         if not l.right and not l.left and l.val == r : return True
+         if l. left:
+             stack.append[(l.left,targetSum - l.val)]
+          if l.true :
+             stack.append[(l.right,targetSum - l.val)]
+           
+        return False
         
         # Any comments or advice?
         
