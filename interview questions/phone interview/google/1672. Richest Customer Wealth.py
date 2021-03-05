@@ -45,10 +45,11 @@ class Solution(object):
         :rtype: int
         """
         maxWealth = 0
-	      for i in range(len(accounts)):
-		        totalWealth = sum(accounts[i])
-		        maxWealth = max(maxWealth, totalWealth)
-	      return maxWealth
+        for i in range(len(accounts)):
+            totalWealth = sum(accounts[i])
+            maxWealth = max(maxWealth,totalWealth)
+        return maxWealth
+
       
         # Time:O(N) Space:O(1)
         
