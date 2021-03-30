@@ -51,6 +51,7 @@ class Solution(object):
             
         return res + word1[i+1:] + word2[i+1:]
       
+      
       # take away: min function can be used and when return the result string, can just by using array slicing
       
       
